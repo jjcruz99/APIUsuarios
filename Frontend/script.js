@@ -3,7 +3,7 @@
         
         // Realizar la llamada al endpoint para obtener la lista de usuarios
         try {
-            const response = await fetch('http://localhost:8080/users'); // Cambia esto si tu endpoint está en un contexto diferente
+            const response = await fetch('http://localhost:8080/users'); 
             if (!response.ok) {
                 throw new Error('Error al obtener los usuarios');
             }

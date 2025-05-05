@@ -86,7 +86,7 @@ class UsuarioServiceTest {
     @Test
     void borrarUsuario() {
 
-        Long id = 2l;
+        Long id = 2L;
 
         //configurar el mock para simular la existencia del id
         when(usuarioRepository.existsById(id)).thenReturn(true);
