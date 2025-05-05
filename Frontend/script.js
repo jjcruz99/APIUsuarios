@@ -1,4 +1,4 @@
-    // Llamada al endpoint para obtener la lista de usuarios
+   
     async function cargarUsuarios() {
         
         // Realizar la llamada al endpoint para obtener la lista de usuarios
@@ -20,7 +20,7 @@
                 let listafecha = usuario.fechaNacimiento.split('-');
                 let fechaFormateada = listafecha[2] + '/' + listafecha[1] + '/' + listafecha[0];
                 
-                // Crear una fila con los datos del usuario
+                // Crear filas con los datos del usuario
                 fila.innerHTML = `
                     <td>${usuario.id_usuario}</td>
                     <td>${usuario.nombre}</td>
