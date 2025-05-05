@@ -19,6 +19,7 @@ public class UsuarioService implements  IusuarioService{
     private final IusuarioRepository usuarioRepository;
 
     public UsuarioService(IusuarioRepository usuarioRepository) {
+        //inyeccion por constructor
         this.usuarioRepository = usuarioRepository;
     }
 
@@ -95,6 +96,9 @@ public class UsuarioService implements  IusuarioService{
     //Metodo validar datos de entrada
     public Boolean validarDatos(Usuario usuario){
         boolean validacion=false;
+
+        //craer una lista para almacenar los datos del usuario
+        //y hacer la validacion solo con un if
         List<String> listaDatosUsuario = new ArrayList<>();
 
         listaDatosUsuario.add(usuario.getNombre());
