@@ -1,0 +1,226 @@
+/* funt - roboto 
+// <weight>: Use a value from 100 to 900
+// <uniquifier>: Use a unique and descriptive class name
+
+.roboto-<uniquifier> {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+*/
+
+body{
+font-family: "Roboto", sans-serif;
+}
+
+#titulo{
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo para el botón de ayuda */
+#boton-ayuda {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    animation: spinZoom 5s ease-in-out infinite;
+}
+@keyframes spinZoom {
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(15deg) scale(1.2); /* Rotación y zoom */
+    }
+}
+
+#boton-ayuda:hover {
+    background-color: #0056b3;
+}
+
+#contenedor-principal{
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  height: 100%;
+  background-color: #ebe4e481;
+  padding: 20px;
+}
+
+#contenedor-imagen{
+    display: flex;
+    justify-content: center;
+}
+
+#imagen-usuario{
+    width: 60px;
+    height: 60px;
+    border-radius: 10%;
+    margin-bottom: 20px;
+    animation: float 20s ease-in-out infinite; /* Animación de flotación */
+}
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Flota hacia arriba */
+    }
+}
+
+#contenedor-formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+#formulario-usuario{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.campos-formulario{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.campos-formulario{
+    font-size: 1.1rem;
+}
+
+.datos-formulario{
+    font-size: 1.1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+
+
+/*estilos para los botones*/
+#contenedor-botones{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    gap: 20px;
+}
+
+.botones{
+    color: rgb(29, 22, 22);
+    font-size: 1.2rem;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 400;
+}
+
+#boton-agregar{
+    background-color: #79ee4a;
+}
+#boton-actualizar{
+    background-color: #007BFF;
+}
+#boton-borrar{
+    background-color: #f04e5c;
+}
+#boton-listar{
+    background-color: #007BFF;
+}
+
+#boton-agregar:hover{
+    background-color: #41c00f73;
+}
+#boton-actualizar:hover{
+    background-color: #287eee88;
+}
+#boton-borrar:hover{
+    background-color: #f1425185;
+}
+#boton-listar:hover{
+    background-color: #287eee71;
+}
+
+
+/* Estilos para la tabla de usuarios */
+
+#subtitulo{
+    margin-top: 50px;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo para la tabla */
+#tabla-usuarios {
+    border-collapse: collapse; /* Quita los espacios entre las celdas */
+    margin: 20px; 
+    font-size: 1.2rem; 
+    text-align: left; 
+}
+
+/* Estilo para las celdas y los encabezados */
+#tabla-usuarios th, #tabla-usuarios td {
+    border: 1px solid #ddd; 
+    padding: 12px; 
+    text-align: center;
+}
+
+/* Estilo para el encabezado de la tabla */
+#tabla-usuarios th {
+    background-color: #f4f4f4; 
+    color: #333; 
+     
+}
+
+/* Estilo para las filas alternas */
+#tabla-usuarios tbody tr:nth-child(even) {
+    background-color: #f9f9f9; 
+}
+
+/* Efecto hover para las filas */
+#tabla-usuarios tbody tr:hover {
+    background-color: #f1f1f1; 
+    cursor: pointer; 
+}
+
+/* Alineación del texto */
+#tabla-usuarios td {
+    vertical-align: middle; 
+}
+
+/* estilos para las instrucciones */
+aside{
+    font-size: 1.2rem;
+    color: #333;
+    margin: 30px 30px;
+    padding: 20px;
+    text-align: center;
+}
+
+footer{
+    padding: 5px 30px 5px 30px;
+    font-size: 1.2rem;
+    color: #b8b0b0;
+    background-image: linear-gradient(to right top, #4623d5, #3d30d9, #343bdd, #2a44e1, #1e4de4, #124dda, #074dcf, #004cc5, #0044ab, #003b92, #003379, #012a60);
+}

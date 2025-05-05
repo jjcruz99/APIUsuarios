@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Gestion Usuarios</title>
+</head>
+<body>
+    <header>
+        <h1 id="titulo">Gestión de Usuarios</h1>
+    </header>
+    
+    <main id="contenedor-principal">
+
+        <button id="boton-ayuda" onclick="irAInstrucciones()">Ayuda</button>
+        
+        <section id="contenedor-imagen">
+            <img src="Pictures/icono_users.png" alt="Imagen de usuario" id="imagen-usuario">
+        </section>
+
+        <section id="contendor-formulario">
+        
+            <form id="formulario-usuario">
+                <div class="campos-formulario" >
+                    <label for="id">Id usuario</label>
+                    <input type="number" id="id"  class="datos-formulario" placeholder="123">
+                </div>
+
+                <div class="campos-formulario" >
+                    <label for="id">Nombre</label>
+                    <input type="text" id="nombre" class="datos-formulario" placeholder="Juan" required>
+                </div>
+
+                <div class="campos-formulario" >
+                    <label for="id">Apellido</label>
+                    <input type="text" id="apellido" class="datos-formulario" placeholder="Gomez" required>
+                </div>
+
+                <div class="campos-formulario" >
+                    <label for="id">Email</label>
+                    <input type="email" id="email" class="datos-formulario" placeholder="juan@email.com" required>
+                </div>
+
+                <div class="campos-formulario" >
+                    <label for="id">Fecha de nacimiento</label>
+                    <input type="date" id="fecha-nacimiento" class="datos-formulario"  placeholder="Fecha nacimiento" required>
+                </div>
+
+                <div class="campos-formulario" >
+                    <label for="id">Elija un rol</label>
+                    <select id="rol" class="datos-formulario" required>
+                        <option value="" disabled selected>Rol</option>
+                        <option value="Administrador">Administrador</option>
+                        <option value="Usuario">Usuario</option>
+                        <option value="Invitado">Invitado</option>
+                    </select>
+                </div>
+
+            </form>
+
+            <div id="contenedor-botones">
+                <button type="button" id="boton-agregar" class="botones" onclick="agregarUsuario()">Agregar</button>
+                <button type="submit" id="boton-actualizar" class="botones" onclick="actualizarUsuario()">Actualizar</button>
+                <button type="submit" id="boton-borrar" class="botones" onclick="eliminarUsuario() ">Borrar</button>
+                <button type="submit" id="boton-listar" class="botones">Listar</button>
+            </div>
+        </section>
+
+
+        <section id="lista-usuarios">
+
+            <h2 id="subtitulo">Lista de Usuarios</h2>
+
+            <table id="tabla-usuarios">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Rol</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Las filas se generarán dinámicamente aquí -->
+                </tbody>
+            </table>
+            
+        </section>
+    </main>
+
+    <aside id="contenedor-instrucciones">
+        <h2 id="subtitulo-instrucciones">📄 Instrucciones</h2>
+        <p class="instrucciones">✔ Para agregar un usuario, complete todos los campos menos ID (❌ No se permiten ID o Email repetidos) y haga clic en "Agregar". </p>
+        <p class="instrucciones">✔ Para actualizar complete, todos los campos incluyendo ID y haga clic en "Actualizar".</p>
+        <p class="instrucciones">✔ Para eliminar un usuario, digite el campo ID y haga clic en "Borrar".</p>
+        <p class="instrucciones">✔ Para listar los usuarios, haga clic en "Listar".</p>
+    </aside>
+
+    <footer id="footer">
+        <p id="texto-footer">Desarrollado por John Jairo Cruz</p>
+        <p id="texto-footer">2025</p>   
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>
