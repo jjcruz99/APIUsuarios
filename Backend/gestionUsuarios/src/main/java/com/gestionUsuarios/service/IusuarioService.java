@@ -16,7 +16,7 @@ public interface IusuarioService {
     public  void actualizarUsuario(Long id,Usuario datosUsuario);
 
     //Metodo para borrar usuario.
-    public void borrarUsuario(Long id);
+    public Boolean borrarUsuario(Long id);
 
     //Metodo para validar si existe email.
     public Boolean validarExistenciaEmail(Long id,String email);

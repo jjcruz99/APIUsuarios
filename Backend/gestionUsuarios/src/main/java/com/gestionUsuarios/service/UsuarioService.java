@@ -61,13 +61,15 @@ public class UsuarioService implements  IusuarioService{
     }
 
     @Override
-    public void borrarUsuario(Long id) {
+    public Boolean borrarUsuario(Long id) {
         //Valida si existe si id_usuario antes de borrarlo
         if(usuarioRepository.existsById(id)){
             usuarioRepository.deleteById(id);
+            return true;
         }
         else{
-            System.out.println("No existe ningun usuario com ese Id");
+            System.out.println("No existe ningun usuario con ese Id");
+            return false;
         }
     }
 

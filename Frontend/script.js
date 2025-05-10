@@ -35,7 +35,7 @@
             });
         } catch (error) {
             console.error('Error:', error);
-            alert('Hubo un error al cargar los usuarios');
+            alert('Hubo un error al cargar los usuarios, conexion API');
         }
     }
 
@@ -150,7 +150,7 @@
             limpiarFormulario();
         } catch (error) {
             console.error('Error:', error);
-            alert('Hubo un error al agregar el usuario');
+            alert('Hubo un error al agregar el usuario, conexion API');
         }
     }
 
@@ -193,7 +193,7 @@
                 limpiarFormulario(); // Limpiar el formulario después de actualizar
             } catch (error) {
                 console.error('Error:', error);
-                alert('Hubo un error al actualizar el usuario');
+                alert('Hubo un error al actualizar el usuario,conexion API');
             }
     }
 
@@ -215,7 +215,11 @@
                 method: 'DELETE'
             });
 
-            if (!response.ok) {
+            if (response.status === 409) {
+                alert('El Id de usuario no existe');
+                return;
+            }
+            else if (!response.ok) {
                 throw new Error('Error al eliminar el usuario');
             }
 
@@ -224,7 +228,7 @@
             limpiarFormulario();
         } catch (error) {
             console.error('Error:', error);
-            alert('Hubo un error al eliminar el usuario');
+            alert('Hubo un error al eliminar el usuario, conexion API');
         }
 
     }

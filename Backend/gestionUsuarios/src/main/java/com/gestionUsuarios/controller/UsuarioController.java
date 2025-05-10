@@ -89,16 +89,21 @@ public class UsuarioController {
 
     }
 
-    //Recibe id del usuario a eliminar
+    //Recibe id del usuario a eliminar y valida si existe.
     @DeleteMapping("/users/{id}")
     public ResponseEntity<String> eliminarUsuario(@PathVariable Long id){
         try {
-            usuarioService.borrarUsuario(id);
-            return ResponseEntity.ok("Se elimino el usuario correctamente");
+           Boolean validacion =  usuarioService.borrarUsuario(id);
+           if (validacion) {
+               return ResponseEntity.ok("Se elimino el usuario correctamente");
+           }
+           else {
+               return ResponseEntity.status(HttpStatus.CONFLICT)
+                       .body("El usuario no existe, revise el id");
+           }
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se pudo borra el usuario. " + e);
         }
-
     }
 
 }
