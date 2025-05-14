@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class UsuarioController {
@@ -93,6 +94,7 @@ public class UsuarioController {
     @DeleteMapping("/users/{id}")
     public ResponseEntity<String> eliminarUsuario(@PathVariable Long id){
         try {
+            //validacion si se borro el usuario si existe
            Boolean validacion =  usuarioService.borrarUsuario(id);
            if (validacion) {
                return ResponseEntity.ok("Se elimino el usuario correctamente");
@@ -102,7 +104,28 @@ public class UsuarioController {
                        .body("El usuario no existe, revise el id");
            }
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se pudo borra el usuario. " + e);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se pudo borra el usuario. " + e.getMessage());
+        }
+    }
+
+    @GetMapping("/user/{id}")
+    public ResponseEntity<Object> buscarPorId(@PathVariable Long id) {
+        try {
+            // Intentamos buscar el usuario por ID
+            Usuario usuarioObtenido = usuarioService.buscarPorId(id);
+
+            // Si el usuario no existe, devolvemos 404
+            if (usuarioObtenido == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body(Map.of("mensaje", "El usuario con el ID " + id + " no fue encontrado."));
+            }
+
+            return ResponseEntity.status(HttpStatus.OK).body(usuarioObtenido);
+        } catch (Exception e) {
+            // En caso de error, devolvemos un mensaje genérico con el estado 400 (Bad Request)
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(Map.of("mensaje", "Ocurrió un error al procesar la solicitud.",
+                            "error", e.getMessage()));
         }
     }
 

@@ -125,4 +125,18 @@ public class UsuarioService implements  IusuarioService{
 
         return validacion;
     }
+
+    @Override
+    public Usuario buscarPorId(Long id) {
+
+        if(usuarioRepository.existsById(id)) {
+            return usuarioRepository.findById(id).orElseThrow
+                    (() -> new EntityNotFoundException("Usuario no encontrado con ese ID : " + id));
+        }
+        else {
+            return null;
+        }
+    }
+
+
 }
