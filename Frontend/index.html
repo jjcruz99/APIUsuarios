@@ -63,10 +63,10 @@
             </form>
 
             <div id="contenedor-botones">
+                <button type="submit" id="boton-buscar" class="botones" onclick="buscarUsuario()">Buscar</button>
                 <button type="button" id="boton-agregar" class="botones" onclick="agregarUsuario()">Agregar</button>
                 <button type="submit" id="boton-actualizar" class="botones" onclick="actualizarUsuario()">Actualizar</button>
-                <button type="submit" id="boton-borrar" class="botones" onclick="eliminarUsuario() ">Borrar</button>
-                <button type="submit" id="boton-listar" class="botones">Listar</button>
+                <button type="submit" id="boton-borrar" class="botones" onclick="eliminarUsuario() ">Borrar</button>         
             </div>
         </section>
 
@@ -97,7 +97,8 @@
     <aside id="contenedor-instrucciones">
         <h2 id="subtitulo-instrucciones">📄 Instrucciones</h2>
         <p class="instrucciones">✔ Para agregar un usuario, complete todos los campos menos ID (❌ No se permiten ID o Email repetidos) y haga clic en "Agregar". </p>
-        <p class="instrucciones">✔ Para actualizar complete, todos los campos incluyendo ID y haga clic en "Actualizar".</p>
+        <p class="instrucciones">✔ Para actualizar, complete todos los campos incluyendo ID o digite el ID y click en buscar si existe el usuario los campos se diligencian automaticamente
+            modifique los campos a actualizar y haga clic en "Actualizar".</p>
         <p class="instrucciones">✔ Para eliminar un usuario, digite el campo ID y haga clic en "Borrar".</p>
         <p class="instrucciones">✔ Para listar los usuarios, haga clic en "Listar".</p>
     </aside>

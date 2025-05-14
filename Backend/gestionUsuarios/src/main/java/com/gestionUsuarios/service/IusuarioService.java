@@ -23,4 +23,6 @@ public interface IusuarioService {
 
     //Metodo validar datos de entrada
     public Boolean validarDatos(Usuario usuario);
+
+    public Usuario buscarPorId(Long id);
 }

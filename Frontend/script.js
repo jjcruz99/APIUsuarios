@@ -233,8 +233,33 @@
 
     }
 
-    //evento para listar usuarios al hacer clic en el botón
-    document.getElementById('boton-listar').addEventListener('click', cargarUsuarios);
+   async function buscarUsuario() {
+
+    const id_usuario = document.getElementById('id').value
+
+      try{
+        const response = await fetch(`http://localhost:8080/user/${id_usuario}`);
+
+        if(response.status === 404){
+            alert('No se encontro el usurio con ese id.');
+            return;
+        }
+        else if(!response.ok){
+            throw new Error('Ocurrio un error al buscar usuario.'+response.status);
+        }
+         
+        const usuario = await response.json();
+        console.log(usuario);
+        document.getElementById('nombre').value = usuario.nombre;
+        document.getElementById('apellido').value = usuario.apellido;
+        document.getElementById('email').value = usuario.email;
+        document.getElementById('fecha-nacimiento').value = usuario.fechaNacimiento;
+        document.getElementById('rol').value = usuario.rol;
+      }
+      catch(error){
+        alert('Se presento un error al buscar el usuario')
+      }
+   }
 
     // Función para llevar al usuario a la sección de instrucciones
     function irAInstrucciones() {
